@@ -51,8 +51,8 @@ initialize.rsa <- function(rsa) {
   rsa$xi0 <- sx[floor(nrow(sx) * rsa$quantile)]
   rsa$d0 <- apply(rsa$data, 2, IQR)^(-1)
   
-  # rsa$invscale <- sapply(1:length(rsa$xi), function(x) density_estimate(rsa$xi[x], rsa$data[,x]))
-  rsa$invscale <- rsa$d0
+  rsa$invscale <- sapply(1:length(rsa$xi), function(x) density_estimate(rsa$xi[x], rsa$data[,x]))
+  # rsa$invscale <- rsa$d0
   # print(rsa$d0)
   # print(rsa$invscale)
   
